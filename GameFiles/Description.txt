@@ -1,0 +1,53 @@
+Para fazer o jogo, deverão ser implementadas as funções update, draw e end (se necessário).
+Quaisquer variáveis podem ser cridas globalmente caso seja preciso.
+Um código simples foi feito como exemplo para implementação das funções.
+Para saber qual tecla está sendo pressionada, usa-se a variável Keys.
+Para saber quais teclas foram pressionadas agora, usa-se KeysDown.
+Para saber quais teclas foram soltas agora, usa-se KeysUp.
+Para se desenhar na tela, usa-se a variável Buffer.
+Buffer é uma matrix 40x30 em que cada posição representa um pixel no plano da tela
+(lembrando que o eixo y é para baixo).
+
+Keys:
+  bit | função	| keyboard		| atalho
+	  |			|				|
+	7 | -		| -				| -
+	6 | -		| -				| -
+	5 | back	| left_ctrl		| BACK
+	4 | select	| space			| SELECT
+	3 | up		| up_arrow		| UP
+	2 | down	| down_arrow	| DOWN
+	1 | left	| left_arrow	| LEFT
+	0 | right	| right_arrow	| RIGHT
+
+Cores:
+	BLACK	| 0b000
+	RED		| 0b100
+	GREEN	| 0b010
+	BLUE	| 0b001
+	YELLOW	| 0b110
+	PINK	| 0b101
+	CYAN	| 0b011
+	WHITE	| 0b111
+
+Funções que você vai usar:
+	void drawBack(byte color);	(Desenha o background)
+	void quit();						(Sai do jogo)
+	BUFFER(i, j);						(Get/Set Do buffer (sem checar bounds) na posição (i, j))
+	SET_BUFFER(i, j, c);				(Seta buffer para cor c (checando bounds) na posição (i, j))
+	GET_KEY_I							(retorna se key I está apertada)
+	GETD_KEY_I							(retorna se key I foi apertada no último loop)
+	GETU_KEY_I							(retorna se key I foi levantada no último loop)
+	drawCHAR(x, y, c)					(desenha caractere CHAR (A-Z, 0-9) com cor c na posição (x, y))
+	drawNum(x, y, n, c)					(desenha número n (da direita para a esquerda) com cor c na posição (x, y))
+
+Funções que você vai fazer:
+	Start para inicializar variáveis e tal
+	Update será o loop do jogo.
+	Draw serve para desenhar os pixels no buffer.
+	End serve para terminar o programa (caso precise liberar memória ou algo do tipo)
+	(caso não precise da end, apenas deixe em branco).
+
+Dica:
+	Use dois ponteiros pra função (update e draw) que apontam para uma cena principal.
+	Quando passar para outra cena basta mudar os ponteiros (update e draw).
